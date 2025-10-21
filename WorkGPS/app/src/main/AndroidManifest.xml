@@ -1,0 +1,33 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WorkGPS">
+
+        <!-- 🔹 LoginActivity debe tener el intent-filter MAIN + LAUNCHER -->
+        <activity
+            android:name="com.example.workgps.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 🔹 Las demás actividades NO deben tener ese intent-filter -->
+        <activity android:name="com.example.workgps.MainActivity" />
+        <activity android:name="com.example.workgps.ConfirmActivity" />
+        <activity android:name="com.example.workgps.EmployerActivity" />
+
+    </application>
+</manifest>
